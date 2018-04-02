@@ -26,6 +26,9 @@
     <Compile Include="algorithms\algorithms_aes.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="algorithms\algorithms_des3.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="algorithms\__init__.py">
       <SubType>Code</SubType>
     </Compile>
