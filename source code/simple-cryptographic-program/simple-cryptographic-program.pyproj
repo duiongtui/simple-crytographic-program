@@ -11,7 +11,8 @@
     <OutputPath>.</OutputPath>
     <Name>simple-cryptographic-program</Name>
     <RootNamespace>simple-cryptographic-program</RootNamespace>
-    <InterpreterId>MSBuild|env-for-crypto-app|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +23,18 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="algorithms\algorithms_aes.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="algorithms\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="file\file_handle.py" />
+    <Compile Include="file\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="simple_cryptographic_program.py" />
+    <Compile Include="ui.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env-for-crypto-app\">
@@ -37,6 +49,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="algorithms\" />
+    <Folder Include="crypto-algorithms\" />
+    <Folder Include="F:\Google Drive\BK\HỌC KỲ 172\Mật mã\Assignment\Project\simple-crytographic-program\source code\simple-cryptographic-program\algorithms\" />
+    <Folder Include="F:\Google Drive\BK\HỌC KỲ 172\Mật mã\Assignment\Project\simple-crytographic-program\source code\simple-cryptographic-program\crypto-algorithms\" />
+    <Folder Include="file\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.6" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

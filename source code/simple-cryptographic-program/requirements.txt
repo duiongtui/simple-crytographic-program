@@ -1,4 +1,7 @@
 pip==9.0.3
+PyQt5==5.10.1
+pyqt5-tools==5.9.0.1.2
 setuptools==28.8.0
+sip==4.19.8
 six==1.11.0
 wxPython==4.0.1
