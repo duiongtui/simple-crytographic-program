@@ -12,7 +12,7 @@ def encrypt_des3(message,key):
 
     padded_mess, padding_size = pad(message,DES3.block_size)
 
-    return iv + cipher.encrypt(padded_mess) + bytes(padding_size)
+    return iv + cipher.encrypt(padded_mess) + bytes([padding_size])
 
 def decrypt_des3(ciphertext,key):
     iv = ciphertext[:DES3.block_size]

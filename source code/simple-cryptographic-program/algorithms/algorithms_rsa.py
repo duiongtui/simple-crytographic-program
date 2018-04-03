@@ -1,18 +1,19 @@
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_v1_5 as rsa
 from Crypto import Random
+from file import file_handle as file
 
-def generate_key():
+def generate_key(folder2save_key):
     key = RSA.generate(2048)
-    with open(".\output\pulic_key.pem","wb") as public:
-        with open(".\output\private_key.pem","wb") as private:
+    file.check_and_create_folder(folder2save_key)
+    with open(folder2save_key + "\public_key.pem","wb") as public:
+        with open(folder2save_key + "\private_key.pem","wb") as private:
             public.write(key.publickey().exportKey())
             private.write(key.exportKey())
             public.close()
             private.close()
-    print(key.size_in_bytes())
-def encrypt_rsa(plaintext, filepath_key):
 
+def encrypt_rsa(plaintext, filepath_key):
     publickey = RSA.importKey(open(filepath_key).read())
     cipher = rsa.new(publickey)
     return cipher.encrypt(plaintext)
