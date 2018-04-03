@@ -26,7 +26,13 @@
     <Compile Include="algorithms\algorithms_aes.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="algorithms\algorithms_blowfish.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="algorithms\algorithms_des3.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="algorithms\algorithms_rsa.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="algorithms\__init__.py">
@@ -59,6 +65,7 @@
     <Folder Include="F:\Google Drive\BK\HỌC KỲ 172\Mật mã\Assignment\Project\simple-crytographic-program\source code\simple-cryptographic-program\algorithms\" />
     <Folder Include="F:\Google Drive\BK\HỌC KỲ 172\Mật mã\Assignment\Project\simple-crytographic-program\source code\simple-cryptographic-program\crypto-algorithms\" />
     <Folder Include="file\" />
+    <Folder Include="output\" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.6" />
