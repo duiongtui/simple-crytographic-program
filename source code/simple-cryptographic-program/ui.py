@@ -6,7 +6,6 @@
 #
 # WARNING! All changes made in this file will be lost!
 import sys
-import PyQt4
 from PyQt4 import QtCore, QtGui
 
 try:
