@@ -1,7 +1,8 @@
 from algorithms import algorithms_aes as aes
 from algorithms import algorithms_des3 as des3
-from algorithms import algorithms_rsa as rsa
 from Crypto.Hash import SHA256 as sha
+import algorithms_rsa as rsa
+
 import os
 
 AES = 0
@@ -33,7 +34,6 @@ def encrypt_file(filepath,folder2save_enc,key,algorithms = -1):
                 outfile.close()
     else:
         raise ValueError("This type of algorithm isn't supported")
-
 
 def decrypt_file(filepath,folder2save_dec,key,algorithms = -1):
 
@@ -76,6 +76,7 @@ def encrypt_file_rsa(filepath,keypath,folder2save_enc):
                 outfile.write(enc)
                 infile.close()
                 outfile.close()
+
 def decrypt_file_rsa(filepath,keypath,folder2save_dec):
     filename = os.path.basename(filepath)
     check_and_create_folder(folder2save_dec)

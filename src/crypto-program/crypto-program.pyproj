@@ -24,16 +24,15 @@
     <Compile Include="algorithms\algorithms_aes.py" />
     <Compile Include="algorithms\algorithms_blowfish.py" />
     <Compile Include="algorithms\algorithms_des3.py" />
-    <Compile Include="algorithms\algorithms_rsa.py" />
     <Compile Include="algorithms\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="algorithms_rsa.py" />
     <Compile Include="crypto_program.py" />
     <Compile Include="file\file_handle.py" />
     <Compile Include="file\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="main_ui.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="file\" />

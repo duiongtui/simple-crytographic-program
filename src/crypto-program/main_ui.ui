@@ -48,7 +48,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tabEncrypt">
      <attribute name="title">
@@ -126,7 +126,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -236,20 +236,9 @@
        </item>
       </layout>
      </widget>
-     <zorder>verticalLayoutWidget_4</zorder>
-     <zorder>enc_label_origin</zorder>
-     <zorder>enc_label_key</zorder>
      <zorder>encryptButton</zorder>
-     <zorder>enc_label_filepath</zorder>
-     <zorder>enc_address_origin_text</zorder>
-     <zorder>enc_address_key_text</zorder>
-     <zorder>enc_address_save_text</zorder>
-     <zorder></zorder>
-     <zorder></zorder>
-     <zorder></zorder>
-     <zorder>enc_address_origin_button</zorder>
-     <zorder>enc_address_key_button</zorder>
-     <zorder>enc_address_save_button</zorder>
+     <zorder>layoutWidget</zorder>
+     <zorder>verticalLayoutWidget_4</zorder>
      <zorder>layoutWidget_2</zorder>
     </widget>
     <widget class="QWidget" name="tabDecrypt">
@@ -371,7 +360,7 @@
        <rect>
         <x>10</x>
         <y>20</y>
-        <width>571</width>
+        <width>241</width>
         <height>111</height>
        </rect>
       </property>
@@ -412,10 +401,21 @@
        <string>Decrypt</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>20</y>
+        <width>221</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RSA note: import your private key to &lt;/p&gt;&lt;p&gt;decrypt a file&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
     </widget>
    </widget>
-   <zorder>tab</zorder>
-   <zorder>enc_label_origin</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

@@ -1,12 +1,17 @@
 from Crypto.Cipher import DES3
 from Crypto import Random
+from Crypto.Hash import MD5
 
 def pad(s, block_size):
     # Dam bao kich thuoc cua file nhap vao la boi cua AES.block_size
     padding_size = block_size - len(s) % block_size
     return s + b'\0' * padding_size,padding_size
 
-def encrypt_des3(message,key):
+def encrypt_des3(message,key_in):
+    hashFunc = MD5.new()
+    hashFunc.update(bytes(key_in,'utf-8'))
+    key = hashFunc.digest()
+
     iv = Random.new().read(DES3.block_size)
     cipher = DES3.new(key,DES3.MODE_CFB,iv)
 
@@ -14,7 +19,12 @@ def encrypt_des3(message,key):
 
     return iv + cipher.encrypt(padded_mess) + bytes([padding_size])
 
-def decrypt_des3(ciphertext,key):
+def decrypt_des3(ciphertext,key_in):
+
+    hashFunc = MD5.new()
+    hashFunc.update(bytes(key_in,'utf-8'))
+    key = hashFunc.digest()
+
     iv = ciphertext[:DES3.block_size]
     cipher = DES3.new(key,DES3.MODE_CFB,iv)
 

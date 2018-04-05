@@ -1,7 +1,7 @@
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_v1_5 as rsa
 from Crypto import Random
-import file.file_handle
+import file.file_handle as file
 
 def generate_key(folder2save_key):
     key = RSA.generate(2048)
