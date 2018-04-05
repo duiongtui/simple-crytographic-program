@@ -1,21 +1,55 @@
-
 from Crypto.Hash import MD5
-import file.file_handle as file_handle
 import os
-from algorithms import algorithms_rsa as rsa
+import sys
+from PyQt4 import uic
+from PyQt4.QtGui import *
+from PyQt4.QtCore import *
+
 AES = 0
 DES3 = 1
 
+qtCreatorFile = "main_ui.ui" # Enter file here. 
+Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
+ 
+class MyApp(QMainWindow, Ui_MainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        Ui_MainWindow.__init__(self)
+        self.setupUi(self)
+        self.encryptButton.clicked.connect(lambda: self.showdialog("Some text"))
+        enc_origin_file_path =  self.enc_address_origin_button.clicked.connect(self.getFileName)
+
+    def showdialog(self,message):
+        dialog = QDialog()
+        button = QPushButton("OK",dialog)
+        text = QLabel(message)
+        text.setAlignment(Qt.AlignCenter)
+        
+        vbox = QVBoxLayout()
+        vbox.addWidget(text)
+        vbox.addStretch()
+        vbox.addWidget(button)
+
+        dialog.setLayout(vbox)
+        dialog.setMaximumSize(250,150)
+        dialog.setMinimumSize(250,150)
+        dialog.setWindowTitle("Notification")
+        dialog.setWindowModality(2)
+
+        dialog.exec_()
+
+    def getFileName(self):
+        dialog = QFileDialog()
+        dialog.setFileMode(QFileDialog.AnyFile)
+
+        filenames = QStringListModel()
+        if dialog.exec():
+            filenames = dialog.selectedFiles()
+        
+        return filenames
+
 if __name__ == "__main__":
-    key = "sang"
-    padded_key = MD5.new()
-    padded_key.update(key.encode())
-    
-    #file_handle.encrypt_file("C:/Users/Sang/Desktop/New folder/_MDP4147.jpg","C:/Users/Sang/Desktop/New folder/enc",padded_key.digest(),AES)
-    success = file_handle.decrypt_file("C:/Users/Sang/Desktop/New folder/enc/_MDP4147.jpg.cipher","C:/Users/Sang/Desktop/New folder/dec",padded_key.digest(),AES)
-    
-    #rsa.generate_key("C:/Users/Sang/Desktop/New folder/key")
-    #file_handle.encrypt_file_rsa("C:/Users/Sang/Desktop/New folder/plaintext.txt","C:/Users/Sang/Desktop/New folder/key/public_key.pem","C:/Users/SUN/Desktop/New folder/enc")
-    #success = file_handle.decrypt_file_rsa("C:/Users/Sang/Desktop/New folder/enc/plaintext.txt.cipher","C:/Users/Sang/Desktop/New folder/key/private_key.pem","C:/Users/Sang/Desktop/New folder/dec")
-    print(success)
-    #print(os.getcwd().replace(os.path.sep,'/'))
+    app = QApplication(sys.argv)
+    window = MyApp()
+    window.show()
+    sys.exit(app.exec_())

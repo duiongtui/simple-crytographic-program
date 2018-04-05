@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>620</width>
+    <height>460</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>620</width>
+    <height>460</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>620</width>
+    <height>460</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Simple Encrypt/Decrypt Program</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tab">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>591</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tabEncrypt">
+     <attribute name="title">
+      <string>ENCRYPT</string>
+     </attribute>
+     <widget class="QWidget" name="verticalLayoutWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>571</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="encAlgorithmsChose">
+       <item>
+        <widget class="QRadioButton" name="enc_radio_des">
+         <property name="text">
+          <string>DES algorithm</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="enc_radio_aes">
+         <property name="text">
+          <string>AES algorithm</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="enc_radio_rsa">
+         <property name="text">
+          <string>RSA algorithm</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="encryptButton">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>310</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Encrypt</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>271</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="encGenerateKeyLayout">
+       <item>
+        <widget class="QLabel" name="enc_gen_key_label">
+         <property name="text">
+          <string>Not have key for RSA algorithm ?</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="enc_gen_key_button">
+         <property name="text">
+          <string>Generate key</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>571</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="encFileImportLayout">
+       <item>
+        <layout class="QVBoxLayout" name="encLabelLayout">
+         <item>
+          <widget class="QLabel" name="enc_label_origin">
+           <property name="minimumSize">
+            <size>
+             <width>71</width>
+             <height>21</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Origin file path   </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="enc_label_key">
+           <property name="text">
+            <string>Key</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="enc_label_filepath">
+           <property name="text">
+            <string>Encrypt file path</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="encAddressLayout">
+         <item>
+          <layout class="QHBoxLayout" name="encOriginFilePath">
+           <item>
+            <widget class="QLineEdit" name="enc_address_origin_text">
+             <property name="minimumSize">
+              <size>
+               <width>371</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="enc_address_origin_button">
+             <property name="text">
+              <string>browse ...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="encBrowseKey">
+           <item>
+            <widget class="QLineEdit" name="enc_address_key_text">
+             <property name="minimumSize">
+              <size>
+               <width>371</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="enc_address_key_button">
+             <property name="text">
+              <string>browse ...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="encEncFilePath">
+           <item>
+            <widget class="QLineEdit" name="enc_address_save_text">
+             <property name="minimumSize">
+              <size>
+               <width>371</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="enc_address_save_button">
+             <property name="text">
+              <string>browse ...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <zorder>verticalLayoutWidget_4</zorder>
+     <zorder>enc_label_origin</zorder>
+     <zorder>enc_label_key</zorder>
+     <zorder>encryptButton</zorder>
+     <zorder>enc_label_filepath</zorder>
+     <zorder>enc_address_origin_text</zorder>
+     <zorder>enc_address_key_text</zorder>
+     <zorder>enc_address_save_text</zorder>
+     <zorder></zorder>
+     <zorder></zorder>
+     <zorder></zorder>
+     <zorder>enc_address_origin_button</zorder>
+     <zorder>enc_address_key_button</zorder>
+     <zorder>enc_address_save_button</zorder>
+     <zorder>layoutWidget_2</zorder>
+    </widget>
+    <widget class="QWidget" name="tabDecrypt">
+     <attribute name="title">
+      <string>DECRYPT</string>
+     </attribute>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>571</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="decFileImportLayout">
+       <item>
+        <layout class="QVBoxLayout" name="decLabelLayout">
+         <item>
+          <widget class="QLabel" name="dec_label_enc_filepath">
+           <property name="minimumSize">
+            <size>
+             <width>71</width>
+             <height>21</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Encrypt file path</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="dec_label_key">
+           <property name="text">
+            <string>Key</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="dec_label_filepath">
+           <property name="text">
+            <string>Decrypt file path</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="decAddressLayout">
+         <item>
+          <layout class="QHBoxLayout" name="decEncFilePath">
+           <item>
+            <widget class="QLineEdit" name="dec_address_enc_text">
+             <property name="minimumSize">
+              <size>
+               <width>371</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="dec_address_enc_button">
+             <property name="text">
+              <string>browse ...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="decBrowseKey">
+           <item>
+            <widget class="QLineEdit" name="dec_address_key_text">
+             <property name="minimumSize">
+              <size>
+               <width>371</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="dec_address_key_button">
+             <property name="text">
+              <string>browse ...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="decDecFilePath">
+           <item>
+            <widget class="QLineEdit" name="dec_address_save_text">
+             <property name="minimumSize">
+              <size>
+               <width>371</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="dec_address_save_button">
+             <property name="text">
+              <string>browse ...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>571</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="decAlgorithmsChose">
+       <item>
+        <widget class="QRadioButton" name="dec_radio_des">
+         <property name="text">
+          <string>DES algorithm</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="dec_radio_aes">
+         <property name="text">
+          <string>AES algorithm</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="dec_radio_rsa">
+         <property name="text">
+          <string>RSA algorithm</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="decryptButton">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>310</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decrypt</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <zorder>tab</zorder>
+   <zorder>enc_label_origin</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>620</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File </string>
+    </property>
+    <addaction name="actionGenerate_RSA_key"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionRead_me"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionGenerate_RSA_key">
+   <property name="text">
+    <string>Generate RSA key</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionRead_me">
+   <property name="text">
+    <string>Read me!</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>enc_gen_key_button</tabstop>
+  <tabstop>tab</tabstop>
+  <tabstop>enc_radio_des</tabstop>
+  <tabstop>enc_radio_aes</tabstop>
+  <tabstop>enc_radio_rsa</tabstop>
+  <tabstop>enc_address_origin_text</tabstop>
+  <tabstop>enc_address_origin_button</tabstop>
+  <tabstop>enc_address_key_text</tabstop>
+  <tabstop>enc_address_key_button</tabstop>
+  <tabstop>enc_address_save_text</tabstop>
+  <tabstop>enc_address_save_button</tabstop>
+  <tabstop>encryptButton</tabstop>
+  <tabstop>dec_radio_des</tabstop>
+  <tabstop>dec_radio_aes</tabstop>
+  <tabstop>dec_radio_rsa</tabstop>
+  <tabstop>dec_address_enc_text</tabstop>
+  <tabstop>dec_address_enc_button</tabstop>
+  <tabstop>dec_address_key_text</tabstop>
+  <tabstop>dec_address_key_button</tabstop>
+  <tabstop>dec_address_save_text</tabstop>
+  <tabstop>dec_address_save_button</tabstop>
+  <tabstop>decryptButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionClose</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>309</x>
+     <y>229</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>enc_radio_des</sender>
+   <signal>clicked()</signal>
+   <receiver>enc_address_key_button</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>enc_radio_rsa</sender>
+   <signal>clicked()</signal>
+   <receiver>enc_address_key_button</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>151</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>enc_radio_aes</sender>
+   <signal>clicked()</signal>
+   <receiver>enc_address_key_button</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dec_radio_aes</sender>
+   <signal>clicked()</signal>
+   <receiver>dec_address_key_button</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dec_radio_des</sender>
+   <signal>clicked()</signal>
+   <receiver>dec_address_key_button</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dec_radio_rsa</sender>
+   <signal>clicked()</signal>
+   <receiver>dec_address_key_button</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>151</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

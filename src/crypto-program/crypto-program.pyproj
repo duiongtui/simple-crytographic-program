@@ -33,11 +33,14 @@
     <Compile Include="file\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ui.py" />
+    <Compile Include="main_ui.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="file\" />
     <Folder Include="algorithms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="main_ui.ui" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
