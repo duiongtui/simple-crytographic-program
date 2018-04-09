@@ -75,6 +75,7 @@ class MyApp(QMainWindow, Ui_MainWindow):
                         file_handle.encrypt_file_rsa(self.enc_address_origin_text.text(),self.enc_address_key_text.text(),self.enc_address_save_text.text())
                     except ValueError:
                         toBigFile = True
+                    toBigFile = False
                 if toBigFile:
                     self.showdialog("RSA Algorithms: This size of currnet file is to big")
                 else:
